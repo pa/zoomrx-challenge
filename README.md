@@ -9,5 +9,5 @@ This repo contains a python script module which downloads set of compressed file
 - [sample_output](./sample_output): This directory contains the sample CSV output from local execution
 ## How to run the script
 
-pip install -r requirements.txt
+pip install -r requirements.txt\
 python ftp_downloader.py
