@@ -27,6 +27,8 @@ def main_data_processor():
     except:
         pass
 
+print("\nExtracting...\n")
+
 def parser(file_list, writer, pc_substance_synonyms_e, pc_id):
     """
     Decompress the downloaded files and parse it to the CSV file.
@@ -38,7 +40,7 @@ def parser(file_list, writer, pc_substance_synonyms_e, pc_id):
     with gzip.open(os.path.join(os.getcwd(), 'Substances_Zip\\') + file_list, 'rb') as f:
         file_content = f.read()
 
-    print("\nExtracting...\n")
+
 
     tree = ET.ElementTree(ET.fromstring(file_content))
     root = tree.getroot()
@@ -63,6 +65,6 @@ def parser(file_list, writer, pc_substance_synonyms_e, pc_id):
     pc_substance_synonyms_e.clear()
     pc_id.clear()
 
-    print("Extracted to Substances.csv file in path :  " + os.getcwd())
 
 main_data_processor()
+print("Extracted to Substances.csv file in path :  " + os.getcwd())
